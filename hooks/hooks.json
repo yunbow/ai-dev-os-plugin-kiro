@@ -1,0 +1,43 @@
+{
+  "hooks": [
+    {
+      "title": "AI Dev OS: Guideline Quick Check",
+      "description": "Performs a lightweight guideline compliance check when code files are saved",
+      "event": "File Save",
+      "filePattern": "**/*.{ts,tsx,js,jsx,py,go}",
+      "actionType": "prompt",
+      "instructions": "Skip files in node_modules/, dist/, build/, .next/, __pycache__/, .venv/, vendor/ directories. If the target file matches an AI Dev OS guideline pattern, perform a quick compliance check on the changes. Only flag clear violations, and explain the reason. For minor warnings, mention them briefly without blocking."
+    },
+    {
+      "title": "AI Dev OS: Pre-commit Reminder",
+      "description": "Reminds to run guideline check before committing",
+      "event": "Pre Tool Use",
+      "toolName": "terminal",
+      "commandPattern": "git commit",
+      "actionType": "prompt",
+      "instructions": "Remind the user: Please run a guideline check before committing. Use #ai-dev-os-check in chat to verify compliance."
+    },
+    {
+      "title": "AI Dev OS: Layer Dependency Check",
+      "description": "Warns about dependency rule violations when L1-L2 files are saved",
+      "event": "File Save",
+      "filePattern": "**/ai-dev-os/{01_philosophy,02_decision-criteria}/**",
+      "actionType": "prompt",
+      "instructions": "Check if the saved file violates AI Dev OS dependency rules. L1 philosophy files must not contain tool-specific terms (Kiro, Claude Code, Cursor, etc.). L2 principle files must not contain framework-specific implementation details. Warn the user if violations are found."
+    },
+    {
+      "title": "AI Dev OS: Implementation Plan Suggestion",
+      "description": "Suggests using #ai-dev-os-plan when implementation-related prompts are detected",
+      "event": "User Prompt Submit",
+      "actionType": "command",
+      "command": "bash -c 'INPUT=$(cat); PROMPT=$(echo \"$INPUT\" | jq -r \".prompt\"); if echo \"$PROMPT\" | grep -qiE \"(implement|create|add|build|develop|refactor|fix).*(feature|function|module|component|endpoint|api|service|page)\"; then echo \"{\\\"additionalContext\\\": \\\"For guideline-aware implementation, consider using #ai-dev-os-plan to create a plan with compliance checklists before coding.\\\"}\"; fi'"
+    },
+    {
+      "title": "AI Dev OS: Rule Extraction Suggestion",
+      "description": "Suggests using #ai-dev-os-extract when guideline-related changes are discussed",
+      "event": "User Prompt Submit",
+      "actionType": "command",
+      "command": "bash -c 'INPUT=$(cat); PROMPT=$(echo \"$INPUT\" | jq -r \".prompt\"); if echo \"$PROMPT\" | grep -qiE \"(rule|guideline).*(add|change|delete|modify)\"; then echo \"{\\\"additionalContext\\\": \\\"AI Dev OS guideline change detected. Use #ai-dev-os-extract to extract rules via the Rule Harvesting.\\\"}\"; fi'"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# AI coding tools (user-local config — not part of this repo)
+# NOTE: The following are INTENTIONALLY tracked in this plugin repo:
+#   steering/         — Steering rule definitions (distributed to users)
+#   hooks/hooks.json  — Hook definitions (distributed to users)
+#   templates/AGENTS.md.template — Template for user's AGENTS.md (distributed to users)
+.claude/
+CLAUDE.md
+.kiro/
+AGENTS.md
+.cursor/
+.cursorrules
