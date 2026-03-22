@@ -42,6 +42,7 @@ cp -r .kiro/plugins/ai-dev-os/hooks/* .kiro/hooks/
 ### 钩子设置
 
 Kiro 钩子也可以通过 Hook UI 配置：
+
 1. 打开命令面板（`Ctrl+Shift+P` / `Cmd+Shift+P`）
 2. 输入 "Kiro: Open Kiro Hook UI"
 3. 根据 `hooks/hooks.json` 的配置创建钩子
@@ -51,12 +52,14 @@ Kiro 钩子也可以通过 Hook UI 配置：
 ## 3. 初始设置
 
 在 Kiro 聊天中调用：
-```
+
+```text
 #ai-dev-os-init [tech-stack]
 ```
 
 示例：
-```
+
+```text
 #ai-dev-os-init nextjs
 ```
 
@@ -66,13 +69,13 @@ Kiro 钩子也可以通过 Hook UI 配置：
 
 ### 4.1 实现前规划
 
-```
+```text
 #ai-dev-os-plan 添加JWT用户认证
 ```
 
 ### 4.2 创建工单而非直接实现
 
-```
+```text
 #ai-dev-os-ticket 添加JWT用户认证
 ```
 
@@ -82,19 +85,19 @@ Kiro 钩子也可以通过 Hook UI 配置：
 
 ### 4.4 提交前
 
-```
+```text
 #ai-dev-os-check
 ```
 
 ### 4.5 代码审查后
 
-```
+```text
 #ai-dev-os-extract [file-path]
 ```
 
 ### 4.6 理解规则
 
-```
+```text
 #ai-dev-os-why "为什么禁止使用 any 类型？"
 ```
 
@@ -104,19 +107,19 @@ Kiro 钩子也可以通过 Hook UI 配置：
 
 ### 每月：健康审计
 
-```
+```text
 #ai-dev-os-audit
 ```
 
 ### 每季度：SECI 螺旋进化
 
-```
+```text
 #ai-dev-os-evolve
 ```
 
 ### 每周/每月：合规报告
 
-```
+```text
 #ai-dev-os-report 1w
 #ai-dev-os-report 1m
 ```
@@ -166,6 +169,7 @@ Kiro 钩子也可以通过 Hook UI 配置：
 ### Kiro Specs 与 AI Dev OS 配合
 
 Kiro 的规格驱动开发（需求 → 设计 → 任务）补充 AI Dev OS：
+
 - 用 Kiro Specs 进行功能规划和任务分解
 - AI Dev OS 指南作为规格任务执行时的质量门控
 

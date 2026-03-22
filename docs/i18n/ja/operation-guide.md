@@ -51,6 +51,7 @@ cp -r .kiro/plugins/ai-dev-os/hooks/* .kiro/hooks/
 ### フックの設定
 
 Kiro フックは Hook UI からも設定できます:
+
 1. コマンドパレットを開く（`Ctrl+Shift+P` / `Cmd+Shift+P`）
 2. "Kiro: Open Kiro Hook UI" と入力
 3. `hooks/hooks.json` の設定に合わせてフックを作成
@@ -62,16 +63,19 @@ Kiro フックは Hook UI からも設定できます:
 ### セットアップウィザードの実行
 
 Kiro チャットで呼び出します:
-```
+
+```text
 #ai-dev-os-init [tech-stack]
 ```
 
 例:
-```
+
+```text
 #ai-dev-os-init nextjs
 ```
 
 ウィザードの動作:
+
 1. 技術スタック、プロジェクト規模、既存ルールファイルをヒアリング
 2. 既存ルールの検出と取り込み（`.cursorrules`, `AGENTS.md`, `.eslintrc`）
 3. 4層ディレクトリ構造の生成
@@ -82,7 +86,7 @@ Kiro チャットで呼び出します:
 
 初期化後、以下の構造を確認します:
 
-```
+```text
 ai-dev-os/
 ├── 01_philosophy/
 ├── 02_decision-criteria/
@@ -100,11 +104,12 @@ ai-dev-os/
 
 重要な変更の前に、ガイドライン準拠の計画を作成します。`ai-dev-os-plan` ステアリングルールは `inclusion: auto` なので、実装タスクを議論すると Kiro が自動的に提案します。明示的に呼び出すこともできます:
 
-```
+```text
 #ai-dev-os-plan JWT認証機能を追加
 ```
 
 実行内容:
+
 1. リクエストを分析し、影響を受けるファイルを特定
 2. ファイルと関連する AI Dev OS ガイドラインをマッピング
 3. 適用可能なルールのチェックリストを生成
@@ -114,11 +119,12 @@ ai-dev-os/
 
 実装を後回しにしたい場合（チームへのアサインやバックログ管理など）、チケットを作成します:
 
-```
+```text
 #ai-dev-os-ticket JWT認証機能を追加
 ```
 
 実行内容:
+
 1. `#ai-dev-os-plan` と同じ分析を実行
 2. チケットの出力先を確認（AGENTS.md に設定がない場合）:
    - **ローカルファイル**: 指定ディレクトリに `TICKET-001-add-user-auth.md` として保存
@@ -137,6 +143,7 @@ ai-dev-os/
 ### 4.3 コーディング
 
 通常通りコードを書きます。ステアリングルールとフックが自動的に:
+
 - コードファイル保存時にガイドライン準拠をチェック（`guideline-compliance` ファイルマッチステアリング）
 - L1-L2ファイル編集時に依存性ルール違反を警告（`layer-dependency` ファイルマッチステアリング）
 - コミット前に準拠チェックの実行をリマインド
@@ -145,7 +152,7 @@ ai-dev-os/
 
 準拠チェックを実行します:
 
-```
+```text
 #ai-dev-os-check
 ```
 
@@ -153,7 +160,7 @@ ai-dev-os/
 
 AIが生成したコードをレビューで修正した場合、新ルールを抽出します:
 
-```
+```text
 #ai-dev-os-extract [file-path]
 ```
 
@@ -161,7 +168,7 @@ AIが生成したコードをレビューで修正した場合、新ルールを
 
 チームメンバーがルールに疑問を持った時:
 
-```
+```text
 #ai-dev-os-why "なぜany型が禁止なの？"
 ```
 
@@ -171,19 +178,19 @@ AIが生成したコードをレビューで修正した場合、新ルールを
 
 ### 月次: 健全性監査
 
-```
+```text
 #ai-dev-os-audit
 ```
 
 ### 四半期: SECI螺旋進化
 
-```
+```text
 #ai-dev-os-evolve
 ```
 
 ### 週次/月次: 準拠レポート
 
-```
+```text
 #ai-dev-os-report 1w
 #ai-dev-os-report 1m
 ```
@@ -246,6 +253,7 @@ AIが生成したコードをレビューで修正した場合、新ルールを
 ### Kiro Specs と AI Dev OS の連携
 
 Kiro のスペック駆動開発（要件 → 設計 → タスク）は AI Dev OS を補完します:
+
 - Kiro Specs で機能計画とタスク分解
 - AI Dev OS ガイドラインはスペックタスク実行時の品質ゲートとして機能
 - `Pre Spec Task` / `Post Spec Task` フックイベントでガイドラインチェックをトリガー可能

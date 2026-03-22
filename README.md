@@ -33,7 +33,7 @@ Requires [Kiro](https://kiro.dev/) >= 1.0.0 and AI Dev OS layer files (L1-L3) in
 <details>
 <summary>Manual Setup</summary>
 
-**Option A: Submodule**
+#### Option A: Submodule
 
 ```bash
 # 1. Add AI Dev OS rules as submodule
@@ -47,7 +47,7 @@ cp -r .kiro/plugins/ai-dev-os/steering/ .kiro/steering/
 cp -r .kiro/plugins/ai-dev-os/hooks/ .kiro/hooks/
 ```
 
-**Option B: Direct Copy**
+#### Option B: Direct Copy
 
 ```bash
 # 1. Add rules as submodule (same as above)
@@ -59,8 +59,8 @@ cp -r ai-dev-os-plugin-kiro/steering/ .kiro/steering/
 cp -r ai-dev-os-plugin-kiro/hooks/ .kiro/hooks/
 ```
 
-3. Invoke `#ai-dev-os-init` in Kiro chat to set up the 4-layer structure
-4. Start coding — steering rules and hooks will guide you automatically
+1. Invoke `#ai-dev-os-init` in Kiro chat to set up the 4-layer structure
+2. Start coding — steering rules and hooks will guide you automatically
 
 See [Operation Guide](./docs/operation-guide.md) for detailed instructions.
 
@@ -110,7 +110,7 @@ See [Operation Guide](./docs/operation-guide.md) for detailed instructions.
 <details>
 <summary>Package Structure</summary>
 
-```
+```text
 ai-dev-os-plugin-kiro/
 ├── steering/
 │   ├── ai-dev-os-init.md              # Setup wizard (manual)

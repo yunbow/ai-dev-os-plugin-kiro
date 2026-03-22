@@ -33,7 +33,7 @@ npx ai-dev-os init --rules typescript --plugin kiro
 <details>
 <summary>手动设置</summary>
 
-**方法A：子模块**
+#### 方法A：子模块
 
 ```bash
 # 1. 将 AI Dev OS rules 添加为子模块
@@ -47,7 +47,7 @@ cp -r .kiro/plugins/ai-dev-os/steering/ .kiro/steering/
 cp -r .kiro/plugins/ai-dev-os/hooks/ .kiro/hooks/
 ```
 
-**方法B：直接复制**
+#### 方法B：直接复制
 
 ```bash
 # 1. 将规则添加为子模块（同上）
@@ -59,8 +59,8 @@ cp -r ai-dev-os-plugin-kiro/steering/ .kiro/steering/
 cp -r ai-dev-os-plugin-kiro/hooks/ .kiro/hooks/
 ```
 
-3. 在 Kiro 聊天中调用 `#ai-dev-os-init` 设置4层结构
-4. 开始编码 — 转向规则和钩子会自动引导你
+1. 在 Kiro 聊天中调用 `#ai-dev-os-init` 设置4层结构
+2. 开始编码 — 转向规则和钩子会自动引导你
 
 详情请参阅[操作指南](./operation-guide.md)。
 
@@ -110,7 +110,7 @@ cp -r ai-dev-os-plugin-kiro/hooks/ .kiro/hooks/
 <details>
 <summary>包结构</summary>
 
-```
+```text
 ai-dev-os-plugin-kiro/
 ├── steering/
 │   ├── ai-dev-os-init.md              # 设置向导（手动）

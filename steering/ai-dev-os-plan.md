@@ -9,26 +9,33 @@ description: Creates an implementation plan with relevant AI Dev OS guideline ch
 ## Execution Flow
 
 ### 1. Analyze the Request
+
 Parse the user's implementation request and identify:
+
 - **Goal**: What needs to be built or changed
 - **Scope**: New feature / bug fix / refactoring / enhancement
 - **Affected area**: Which parts of the codebase are involved
 
 ### 2. Identify Affected Files
+
 Search the codebase to determine:
+
 - Files that will be **modified**
 - Files that will be **created**
 - Files that will be **deleted**
 - Related files that provide context (imports, tests, configs)
 
 ### 3. Parse AGENTS.md and Load Guidelines
+
 Extract the list of guideline file paths from the project's AGENTS.md.
 Read the referenced guideline files to understand the active rules.
 
 ### 4. Build Dynamic Mapping
+
 Map affected files to their relevant guidelines using file pattern matching.
 
 Examples by tech stack:
+
 - **Python**: `*.py` → code.md, naming.md, validation.md; `*/router.py` → security.md, cors.md; `*/models.py` → naming.md, validation.md; `*/schemas.py` → validation.md; `alembic/**` → naming.md
 - **Next.js**: `*.tsx` → ui.md, form.md, code.md, naming.md; `app/**/page.tsx` → routing.md; `app/**/action.ts` → server-actions.md
 - **Go**: `*.go` → code.md, naming.md, error-handling.md
@@ -36,12 +43,15 @@ Examples by tech stack:
 If checklist templates exist in `.kiro/checklist-templates/` for the detected tech stack, load them as a reference.
 
 ### 5. Extract Relevant Checklist Items
+
 From the mapped guidelines, extract items that are relevant to **this specific change**:
+
 - Filter by keywords: "MUST", "MUST NOT", "PROHIBITED", "REQUIRED"
 - If a guideline has `checklist: [...]` in frontmatter, use those items
 - Discard items unrelated to the current scope (e.g., skip database rules if no DB changes)
 
 ### 6. Present the Plan
+
 Output the plan in the following format:
 
 ```markdown
@@ -84,12 +94,15 @@ Output the plan in the following format:
 ```
 
 ### 7. Wait for Approval
+
 Ask the user to review and approve the plan. Accept one of:
+
 - **Approve**: Proceed with implementation
 - **Modify**: User requests changes to the plan → update and re-present
 - **Cancel**: Abort without making any changes
 
 ### 8. Implement
+
 Upon approval:
 1. Implement each step from the plan
 2. After each file change, mentally check off the relevant guideline items
@@ -104,4 +117,5 @@ Upon approval:
 ```
 
 ### 9. Suggest Follow-up
+
 Recommend the user run `#ai-dev-os-check` for a full compliance verification before committing.

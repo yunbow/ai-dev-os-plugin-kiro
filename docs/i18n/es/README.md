@@ -33,7 +33,7 @@ Requisitos: [Kiro](https://kiro.dev/) >= 1.0.0 y archivos de capas AI Dev OS (L1
 <details>
 <summary>Configuración manual</summary>
 
-**Opción A: Submódulo**
+#### Opción A: Submódulo
 
 ```bash
 # 1. Agregar reglas de AI Dev OS como submódulo
@@ -47,7 +47,7 @@ cp -r .kiro/plugins/ai-dev-os/steering/ .kiro/steering/
 cp -r .kiro/plugins/ai-dev-os/hooks/ .kiro/hooks/
 ```
 
-**Opción B: Copia directa**
+#### Opción B: Copia directa
 
 ```bash
 # 1. Agregar reglas como submódulo (igual que arriba)
@@ -59,8 +59,8 @@ cp -r ai-dev-os-plugin-kiro/steering/ .kiro/steering/
 cp -r ai-dev-os-plugin-kiro/hooks/ .kiro/hooks/
 ```
 
-3. Invoca `#ai-dev-os-init` en el chat de Kiro para configurar la estructura de 4 capas
-4. Comienza a codificar — las reglas de steering y hooks te guiarán automáticamente
+1. Invoca `#ai-dev-os-init` en el chat de Kiro para configurar la estructura de 4 capas
+2. Comienza a codificar — las reglas de steering y hooks te guiarán automáticamente
 
 Consulta la [Guía de operación](./operation-guide.md) para instrucciones detalladas.
 
@@ -110,7 +110,7 @@ Consulta la [Guía de operación](./operation-guide.md) para instrucciones detal
 <details>
 <summary>Estructura del paquete</summary>
 
-```
+```text
 ai-dev-os-plugin-kiro/
 ├── steering/
 │   ├── ai-dev-os-init.md              # Asistente de configuración (manual)

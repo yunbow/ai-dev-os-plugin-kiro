@@ -9,6 +9,7 @@ description: AI Dev OS initial setup wizard. Asks about the project's tech stack
 ## Execution Flow
 
 ### 1. Interview the User
+
 - Tech stack (Next.js / Python / Go / etc.)
 - Project scale (personal / team / enterprise)
 - Existing rule files (.cursorrules, AGENTS.md, .kiro/steering/, etc.)
@@ -41,7 +42,7 @@ For each detected file:
 
 Generate the following structure:
 
-```
+```text
 ai-dev-os/
 ├── 01_philosophy/
 │   └── core-values.md          # Minimal placeholder
@@ -60,13 +61,16 @@ ai-dev-os/
 ```
 
 ### 4. Generate AGENTS.md
+
 - Auto-insert references to the ai-dev-os directory
 - Set up Specificity Cascade
 - Kiro recognizes AGENTS.md and always includes it in context
 
 ### 5. Set Up Kiro Steering
+
 - Copy AI Dev OS steering rules to `.kiro/steering/`
 - Configure foundational files (product.md, tech.md, structure.md) if not present
 
 ### 6. Git Submodule Setup (Optional)
+
 - For managing ai-dev-os as a separate repository

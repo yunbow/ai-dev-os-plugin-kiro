@@ -42,6 +42,7 @@ cp -r .kiro/plugins/ai-dev-os/hooks/* .kiro/hooks/
 ### Configuración de hooks
 
 Los hooks de Kiro también se pueden configurar via Hook UI:
+
 1. Abrir Command Palette (`Ctrl+Shift+P` / `Cmd+Shift+P`)
 2. Escribir "Kiro: Open Kiro Hook UI"
 3. Crear hooks según las configuraciones en `hooks/hooks.json`
@@ -51,12 +52,14 @@ Los hooks de Kiro también se pueden configurar via Hook UI:
 ## 3. Configuración inicial
 
 En el chat de Kiro:
-```
+
+```text
 #ai-dev-os-init [tech-stack]
 ```
 
 Ejemplo:
-```
+
+```text
 #ai-dev-os-init nextjs
 ```
 
@@ -66,13 +69,13 @@ Ejemplo:
 
 ### 4.1 Planificación antes de implementar
 
-```
+```text
 #ai-dev-os-plan Añadir autenticación de usuario con JWT
 ```
 
 ### 4.2 Crear tickets en lugar de implementar
 
-```
+```text
 #ai-dev-os-ticket Añadir autenticación de usuario con JWT
 ```
 
@@ -82,19 +85,19 @@ Escribe código como de costumbre. Las reglas de dirección y hooks te guiarán 
 
 ### 4.4 Antes del commit
 
-```
+```text
 #ai-dev-os-check
 ```
 
 ### 4.5 Después de revisión de código
 
-```
+```text
 #ai-dev-os-extract [file-path]
 ```
 
 ### 4.6 Entender reglas
 
-```
+```text
 #ai-dev-os-why "¿por qué está prohibido el tipo any?"
 ```
 
@@ -104,19 +107,19 @@ Escribe código como de costumbre. Las reglas de dirección y hooks te guiarán 
 
 ### Mensual: Auditoría de salud
 
-```
+```text
 #ai-dev-os-audit
 ```
 
 ### Trimestral: Evolución espiral SECI
 
-```
+```text
 #ai-dev-os-evolve
 ```
 
 ### Semanal/Mensual: Informe de cumplimiento
 
-```
+```text
 #ai-dev-os-report 1w
 #ai-dev-os-report 1m
 ```
@@ -166,6 +169,7 @@ Todos los archivos fuente (steering rules, hooks, templates) se mantienen en **i
 ### Usar Kiro Specs con AI Dev OS
 
 El desarrollo basado en specs de Kiro (requisitos → diseño → tareas) complementa AI Dev OS:
+
 - Usar Kiro Specs para planificación de features y descomposición de tareas
 - Las directrices de AI Dev OS actúan como puertas de calidad durante la ejecución de tareas de specs
 

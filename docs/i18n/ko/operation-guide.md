@@ -42,6 +42,7 @@ cp -r .kiro/plugins/ai-dev-os/hooks/* .kiro/hooks/
 ### 훅 설정
 
 Kiro 훅은 Hook UI에서도 설정할 수 있습니다:
+
 1. 명령 팔레트 열기 (`Ctrl+Shift+P` / `Cmd+Shift+P`)
 2. "Kiro: Open Kiro Hook UI" 입력
 3. `hooks/hooks.json`의 설정에 맞게 훅 생성
@@ -53,12 +54,14 @@ Kiro 훅은 Hook UI에서도 설정할 수 있습니다:
 ### 설정 마법사 실행
 
 Kiro 채팅에서 호출:
-```
+
+```text
 #ai-dev-os-init [tech-stack]
 ```
 
 예시:
-```
+
+```text
 #ai-dev-os-init nextjs
 ```
 
@@ -68,13 +71,13 @@ Kiro 채팅에서 호출:
 
 ### 4.1 구현 전 계획
 
-```
+```text
 #ai-dev-os-plan JWT 사용자 인증 추가
 ```
 
 ### 4.2 구현 대신 티켓 생성
 
-```
+```text
 #ai-dev-os-ticket JWT 사용자 인증 추가
 ```
 
@@ -84,19 +87,19 @@ Kiro 채팅에서 호출:
 
 ### 4.4 커밋 전
 
-```
+```text
 #ai-dev-os-check
 ```
 
 ### 4.5 코드 리뷰 후
 
-```
+```text
 #ai-dev-os-extract [file-path]
 ```
 
 ### 4.6 규칙 이해
 
-```
+```text
 #ai-dev-os-why "왜 any 타입이 금지인가요?"
 ```
 
@@ -106,19 +109,19 @@ Kiro 채팅에서 호출:
 
 ### 월간: 건전성 감사
 
-```
+```text
 #ai-dev-os-audit
 ```
 
 ### 분기별: SECI 나선 진화
 
-```
+```text
 #ai-dev-os-evolve
 ```
 
 ### 주간/월간: 준수 보고서
 
-```
+```text
 #ai-dev-os-report 1w
 #ai-dev-os-report 1m
 ```
@@ -168,6 +171,7 @@ Kiro 채팅에서 호출:
 ### Kiro Specs와 AI Dev OS 연계
 
 Kiro의 스펙 기반 개발(요구사항 → 설계 → 태스크)은 AI Dev OS를 보완합니다:
+
 - Kiro Specs로 기능 기획과 태스크 분해
 - AI Dev OS 가이드라인은 스펙 태스크 실행 시 품질 게이트로 활용
 

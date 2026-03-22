@@ -9,26 +9,33 @@ description: Creates a ticket (local file or GitHub Issue) containing an impleme
 ## Execution Flow
 
 ### 1. Analyze the Request
+
 Parse the user's implementation request and identify:
+
 - **Goal**: What needs to be built or changed
 - **Scope**: New feature / bug fix / refactoring / enhancement
 - **Affected area**: Which parts of the codebase are involved
 
 ### 2. Identify Affected Files
+
 Search the codebase to determine:
+
 - Files that will be **modified**
 - Files that will be **created**
 - Files that will be **deleted**
 - Related files that provide context (imports, tests, configs)
 
 ### 3. Parse AGENTS.md and Load Guidelines
+
 Extract the list of guideline file paths from the project's AGENTS.md.
 Read the referenced guideline files to understand the active rules.
 
 ### 4. Build Dynamic Mapping
+
 Map affected files to their relevant guidelines using file pattern matching.
 
 Examples by tech stack:
+
 - **Python**: `*.py` → code.md, naming.md, validation.md; `*/router.py` → security.md, cors.md; `*/models.py` → naming.md, validation.md; `*/schemas.py` → validation.md; `alembic/**` → naming.md
 - **Next.js**: `*.tsx` → ui.md, form.md, code.md, naming.md; `app/**/page.tsx` → routing.md; `app/**/action.ts` → server-actions.md
 - **Go**: `*.go` → code.md, naming.md, error-handling.md
@@ -36,15 +43,19 @@ Examples by tech stack:
 If checklist templates exist in `.kiro/checklist-templates/` for the detected tech stack, load them as a reference.
 
 ### 5. Extract Relevant Checklist Items
+
 From the mapped guidelines, extract items that are relevant to **this specific change**:
+
 - Filter by keywords: "MUST", "MUST NOT", "PROHIBITED", "REQUIRED"
 - If a guideline has `checklist: [...]` in frontmatter, use those items
 - Discard items unrelated to the current scope (e.g., skip database rules if no DB changes)
 
 ### 6. Determine Ticket Output Destination
+
 Look for a `## Ticket Settings` section in the project's AGENTS.md.
 
 **If found**, parse the settings:
+
 ```markdown
 ## Ticket Settings
 - output: file                      # "file" or "github-issue"
@@ -53,12 +64,14 @@ Look for a `## Ticket Settings` section in the project's AGENTS.md.
 
 **If NOT found**, ask the user:
 > Where should the ticket be created?
+>
 > 1. **Local file** — specify the directory path (e.g., `docs/tickets/phase1`)
 > 2. **GitHub Issue** — creates an issue via `gh issue create`
 
 Wait for the user's answer before proceeding.
 
 ### 7. Present the Ticket Preview
+
 Before creating the ticket, show a preview and ask for approval.
 
 Output the preview in the following format:
@@ -107,6 +120,7 @@ Output the preview in the following format:
 ```
 
 Ask the user to review:
+
 - **Approve**: Create the ticket
 - **Modify**: User requests changes → update and re-present
 - **Cancel**: Abort without creating anything
@@ -151,6 +165,7 @@ The body is the approved preview content (Goal through Principles).
 Report the created issue URL to the user.
 
 ### 9. Suggest Follow-up
+
 Inform the user:
 > Ticket created. When ready to implement, use `#ai-dev-os-plan` with this ticket as context,
 > or assign it to a team member / future session.

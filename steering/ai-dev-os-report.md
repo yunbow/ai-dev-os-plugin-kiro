@@ -9,9 +9,11 @@ description: Generates an AI Dev OS compliance report for teams and stakeholders
 ## Execution Flow
 
 ### 1. Determine Period
+
 Determine the target period from the user's request (default: 1w).
 
 ### 2. Collect Data
+
 - Retrieve commits for the target period using `git log`
 - Identify relevant guidelines for each changed file
 - Aggregate past check results if available

@@ -29,7 +29,7 @@ description: Warns about dependency rule violations when editing AI Dev OS L1 ph
 
 The one-way dependency rule must be maintained:
 
-```
+```text
 L1 Philosophy → L2 Principles → L3 Guidelines → L4 AI Frames
 (most abstract)                              (most specific)
 ```

@@ -12,26 +12,33 @@ description: Checks code changes against AI Dev OS guidelines and automatically 
 ## Execution Flow
 
 ### 1. Determine Scope & Mode
+
 Ask the user or infer the check scope and mode:
 
 **Scope:**
+
 - **Default**: Check unstaged changes (`git diff --name-only`)
 - **Staged**: Check staged changes (`git diff --cached --name-only`)
 - **Branch comparison** (e.g., `main`): Check all changes vs. the specified branch (`git diff [branch]...HEAD --name-only`) — ideal for PR review
 
 **Mode:**
+
 - **Default**: Check & Fix — find violations and fix them automatically
 - **`--dry-run`**: Report only — list violations without modifying code
 
 ### 2. Parse AGENTS.md
+
 Extract the list of guideline file paths from AGENTS.md.
 
 ### 3. Get Changed Files
+
 Retrieve changed files based on the determined scope.
 If no files are changed, report "No changes to check" and exit.
 
 ### 4. Select Checklist
+
 Auto-detect the tech stack from the project and load the appropriate checklist template:
+
 - `.kiro/checklist-templates/nextjs.md` — for Next.js / React projects
 - `.kiro/checklist-templates/python.md` — for Python / FastAPI projects
 - `.kiro/checklist-templates/go.md` — for Go projects
@@ -39,6 +46,7 @@ Auto-detect the tech stack from the project and load the appropriate checklist t
 Also load relevant guideline files from AGENTS.md to extract additional MUST/MUST NOT rules.
 
 ### 5. Check — Systematic Violation Scan
+
 Review ALL changed files against the checklist items systematically:
 
 1. Read each changed file
@@ -48,6 +56,7 @@ Review ALL changed files against the checklist items systematically:
 **Important**: Check ALL items, not just obvious ones. Security and naming rules are easy to miss.
 
 ### 6. Fix — Auto-Correct Violations
+
 **Skip this step if `--dry-run` is specified.**
 
 For each violation found:
@@ -56,12 +65,15 @@ For each violation found:
 3. Mark the item as fixed
 
 **Fix principles:**
+
 - Minimal changes — only fix what violates the checklist
 - Preserve existing code style and formatting
 - If a fix requires architectural changes (not a simple edit), flag it as ⚠️ manual review instead of auto-fixing
 
 ### 7. Re-Verify
+
 After all fixes are applied, re-scan the fixed files to confirm:
+
 - All auto-fixed violations are resolved
 - No new violations were introduced by the fixes
 

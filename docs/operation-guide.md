@@ -53,6 +53,7 @@ cp -r .kiro/plugins/ai-dev-os/hooks/* .kiro/hooks/
 ### Hook Setup
 
 Kiro hooks can also be configured via the Hook UI:
+
 1. Open Command Palette (`Ctrl+Shift+P` / `Cmd+Shift+P`)
 2. Type "Kiro: Open Kiro Hook UI"
 3. Create hooks matching the configurations in `hooks/hooks.json`
@@ -64,16 +65,19 @@ Kiro hooks can also be configured via the Hook UI:
 ### Run the Setup Wizard
 
 In Kiro chat, invoke:
-```
+
+```text
 #ai-dev-os-init [tech-stack]
 ```
 
 Example:
-```
+
+```text
 #ai-dev-os-init nextjs
 ```
 
 The wizard will:
+
 1. Ask about your tech stack, project scale, and existing rule files
 2. Detect and import existing rules (`.cursorrules`, `AGENTS.md`, `.eslintrc`)
 3. Generate the 4-layer directory structure
@@ -84,7 +88,7 @@ The wizard will:
 
 After initialization, confirm the structure:
 
-```
+```text
 ai-dev-os/
 ├── 01_philosophy/
 ├── 02_decision-criteria/
@@ -102,11 +106,12 @@ ai-dev-os/
 
 For non-trivial changes, create a guideline-aware plan first. The `ai-dev-os-plan` steering rule has `inclusion: auto`, so Kiro will automatically suggest it when you discuss implementation tasks. You can also invoke it explicitly:
 
-```
+```text
 #ai-dev-os-plan Add user authentication with JWT
 ```
 
 This will:
+
 1. Analyze your request and identify affected files
 2. Map files to relevant AI Dev OS guidelines
 3. Generate a checklist of applicable rules
@@ -116,11 +121,12 @@ This will:
 
 When you want to defer implementation — e.g., for team assignment or backlog management — create a ticket instead:
 
-```
+```text
 #ai-dev-os-ticket Add user authentication with JWT
 ```
 
 This will:
+
 1. Perform the same analysis as `#ai-dev-os-plan` (affected files, guideline mapping, checklist)
 2. Ask where to create the ticket (if not configured in AGENTS.md):
    - **Local file**: saves as `TICKET-001-add-user-auth.md` in the specified directory
@@ -146,6 +152,7 @@ Or for GitHub Issues:
 ### 4.3 Writing Code
 
 Write code as usual. The steering rules and hooks will automatically:
+
 - Check guideline compliance when saving code files (via `guideline-compliance` fileMatch steering)
 - Warn about dependency rule violations when editing L1-L2 files (via `layer-dependency` fileMatch steering)
 - Remind you to run compliance checks before committing
@@ -154,11 +161,12 @@ Write code as usual. The steering rules and hooks will automatically:
 
 Run the compliance check:
 
-```
+```text
 #ai-dev-os-check
 ```
 
 This will:
+
 1. Parse `AGENTS.md` to find applicable guidelines
 2. Get changed files from `git diff`
 3. Map files to relevant guidelines
@@ -168,11 +176,12 @@ This will:
 
 When you fix AI-generated code during review, extract new rules:
 
-```
+```text
 #ai-dev-os-extract [file-path]
 ```
 
 This will:
+
 1. Analyze the diff to identify *why* changes were made
 2. Generate rule candidates in `MUST` / `MUST NOT` format
 3. Propose target guideline files and L2 principle links
@@ -182,12 +191,13 @@ This will:
 
 When a team member questions a rule:
 
-```
+```text
 #ai-dev-os-why [rule-or-guideline]
 ```
 
 Example:
-```
+
+```text
 #ai-dev-os-why "why is any type prohibited?"
 ```
 
@@ -197,11 +207,12 @@ Example:
 
 ### Monthly: Health Audit
 
-```
+```text
 #ai-dev-os-audit
 ```
 
 Checks:
+
 - Dependency rule compliance (no tool-specific terms in L1, no framework details in L2)
 - Freshness (L1: 5yr, L2: 3yr, L3: 12mo, L4: 4mo)
 - Traceability (L3→L2 links, orphaned rules)
@@ -210,7 +221,7 @@ Checks:
 
 ### Quarterly: SECI Spiral Evolution
 
-```
+```text
 #ai-dev-os-evolve
 ```
 
@@ -218,7 +229,7 @@ Analyzes recent commits and review patterns to propose updates to L1 philosophy 
 
 ### Weekly/Monthly: Compliance Report
 
-```
+```text
 #ai-dev-os-report 1w
 #ai-dev-os-report 1m
 ```
@@ -283,6 +294,7 @@ All source files (steering rules, hooks, templates) are maintained in **English*
 ### Using Kiro Specs with AI Dev OS
 
 Kiro's spec-driven development (requirements → design → tasks) complements AI Dev OS:
+
 - Use Kiro specs for feature planning and task decomposition
 - Use AI Dev OS guidelines as quality gates during spec task execution
 - The `Pre Spec Task` and `Post Spec Task` hook events can trigger guideline checks

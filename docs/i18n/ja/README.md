@@ -33,7 +33,7 @@ npx ai-dev-os init --rules typescript --plugin kiro
 <details>
 <summary>手動セットアップ</summary>
 
-**方法A: サブモジュール**
+#### 方法A: サブモジュール
 
 ```bash
 # 1. AI Dev OS rules をサブモジュールとして追加
@@ -47,7 +47,7 @@ cp -r .kiro/plugins/ai-dev-os/steering/ .kiro/steering/
 cp -r .kiro/plugins/ai-dev-os/hooks/ .kiro/hooks/
 ```
 
-**方法B: 直接コピー**
+#### 方法B: 直接コピー
 
 ```bash
 # 1. ルールをサブモジュールとして追加（上記と同じ）
@@ -59,8 +59,8 @@ cp -r ai-dev-os-plugin-kiro/steering/ .kiro/steering/
 cp -r ai-dev-os-plugin-kiro/hooks/ .kiro/hooks/
 ```
 
-3. Kiro チャットで `#ai-dev-os-init` を呼び出して4層構造をセットアップ
-4. コーディング開始 — ステアリングルールとフックが自動的にガイドします
+1. Kiro チャットで `#ai-dev-os-init` を呼び出して4層構造をセットアップ
+2. コーディング開始 — ステアリングルールとフックが自動的にガイドします
 
 詳細は[運用手順書](./operation-guide.md)を参照してください。
 
@@ -110,7 +110,7 @@ cp -r ai-dev-os-plugin-kiro/hooks/ .kiro/hooks/
 <details>
 <summary>パッケージ構成</summary>
 
-```
+```text
 ai-dev-os-plugin-kiro/
 ├── steering/
 │   ├── ai-dev-os-init.md              # セットアップウィザード（手動）

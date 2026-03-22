@@ -33,7 +33,7 @@ npx ai-dev-os init --rules typescript --plugin kiro
 <details>
 <summary>수동 설정</summary>
 
-**방법A: 서브모듈**
+#### 방법A: 서브모듈
 
 ```bash
 # 1. AI Dev OS rules를 서브모듈로 추가
@@ -47,7 +47,7 @@ cp -r .kiro/plugins/ai-dev-os/steering/ .kiro/steering/
 cp -r .kiro/plugins/ai-dev-os/hooks/ .kiro/hooks/
 ```
 
-**방법B: 직접 복사**
+#### 방법B: 직접 복사
 
 ```bash
 # 1. 규칙을 서브모듈로 추가 (위와 동일)
@@ -59,8 +59,8 @@ cp -r ai-dev-os-plugin-kiro/steering/ .kiro/steering/
 cp -r ai-dev-os-plugin-kiro/hooks/ .kiro/hooks/
 ```
 
-3. Kiro 채팅에서 `#ai-dev-os-init`을 호출하여 4계층 구조 설정
-4. 코딩 시작 — 스티어링 규칙과 훅이 자동으로 안내합니다
+1. Kiro 채팅에서 `#ai-dev-os-init`을 호출하여 4계층 구조 설정
+2. 코딩 시작 — 스티어링 규칙과 훅이 자동으로 안내합니다
 
 자세한 내용은 [운영 가이드](./operation-guide.md)를 참조하세요.
 
@@ -110,7 +110,7 @@ cp -r ai-dev-os-plugin-kiro/hooks/ .kiro/hooks/
 <details>
 <summary>패키지 구성</summary>
 
-```
+```text
 ai-dev-os-plugin-kiro/
 ├── steering/
 │   ├── ai-dev-os-init.md              # 설정 마법사 (수동)

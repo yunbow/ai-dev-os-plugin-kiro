@@ -5,10 +5,12 @@ Thank you for your interest in contributing!
 ## How to Contribute
 
 ### Reporting Issues
+
 - Use [GitHub Issues](https://github.com/yunbow/ai-dev-os-plugin-kiro/issues)
 - Specify which steering rule, hook, or template is affected
 
 ### Pull Requests
+
 1. Fork the repository
 2. Create a feature branch
 3. Make your changes
