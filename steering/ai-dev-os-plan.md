@@ -104,6 +104,7 @@ Ask the user to review and approve the plan. Accept one of:
 ### 8. Implement
 
 Upon approval:
+
 1. Implement each step from the plan
 2. After each file change, mentally check off the relevant guideline items
 3. After all changes are complete, output a summary showing checklist completion:

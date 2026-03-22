@@ -60,6 +60,7 @@ Review ALL changed files against the checklist items systematically:
 **Skip this step if `--dry-run` is specified.**
 
 For each violation found:
+
 1. Fix the violation directly in the code
 2. Verify the fix doesn't break surrounding code
 3. Mark the item as fixed

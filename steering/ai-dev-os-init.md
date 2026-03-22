@@ -33,6 +33,7 @@ Scan the project for existing configuration and rule files:
 | Existing `.kiro/steering/` files | Merge with AI Dev OS structure |
 
 For each detected file:
+
 1. Read its content
 2. Extract rules that map to AI Dev OS guideline categories
 3. Present the extracted rules to the user for confirmation

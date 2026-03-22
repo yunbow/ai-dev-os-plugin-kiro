@@ -154,6 +154,7 @@ Report the created file path to the user.
 #### 8b. GitHub Issue (`output: github-issue`)
 
 Create a GitHub Issue using:
+
 ```bash
 gh issue create --title "TICKET-{NNN}-{slug}: [One-line summary]" --body "..."
 ```
