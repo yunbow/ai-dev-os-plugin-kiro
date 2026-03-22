@@ -31,7 +31,7 @@ Auto-detect check items from each guideline using the following keywords:
 - "MUST", "MUST NOT", "PROHIBITED", "REQUIRED", etc.
 - If frontmatter contains `checklist: [...]`, use that instead
 
-If checklist templates exist in the plugin's `checklist-templates/` directory for the detected tech stack, load them as a reference.
+If checklist templates exist in `.kiro/checklist-templates/` for the detected tech stack, load them as a reference.
 
 ### 5. Run Checks (Batch Processing)
 Process files in batches to manage context window:

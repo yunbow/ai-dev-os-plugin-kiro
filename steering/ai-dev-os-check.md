@@ -32,9 +32,9 @@ If no files are changed, report "No changes to check" and exit.
 
 ### 4. Select Checklist
 Auto-detect the tech stack from the project and load the appropriate checklist template:
-- `checklist-templates/nextjs.md` — for Next.js / React projects
-- `checklist-templates/python.md` — for Python / FastAPI projects
-- `checklist-templates/go.md` — for Go projects
+- `.kiro/checklist-templates/nextjs.md` — for Next.js / React projects
+- `.kiro/checklist-templates/python.md` — for Python / FastAPI projects
+- `.kiro/checklist-templates/go.md` — for Go projects
 
 Also load relevant guideline files from AGENTS.md to extract additional MUST/MUST NOT rules.
 

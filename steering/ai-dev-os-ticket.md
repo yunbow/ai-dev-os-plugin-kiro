@@ -33,7 +33,7 @@ Examples by tech stack:
 - **Next.js**: `*.tsx` → ui.md, form.md, code.md, naming.md; `app/**/page.tsx` → routing.md; `app/**/action.ts` → server-actions.md
 - **Go**: `*.go` → code.md, naming.md, error-handling.md
 
-If checklist templates exist in the project's `checklist-templates/` directory for the detected tech stack, load them as a reference.
+If checklist templates exist in `.kiro/checklist-templates/` for the detected tech stack, load them as a reference.
 
 ### 5. Extract Relevant Checklist Items
 From the mapped guidelines, extract items that are relevant to **this specific change**:
