@@ -1,5 +1,6 @@
 # AI Dev OS Plugin — Kiro
 
+[![Lint & Link Check](https://github.com/yunbow/ai-dev-os-plugin-kiro/actions/workflows/lint.yml/badge.svg)](https://github.com/yunbow/ai-dev-os-plugin-kiro/actions/workflows/lint.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 
 A Kiro plugin that integrates the **AI Dev OS** 4-layer model into Kiro's Steering Rules and Hooks system.
