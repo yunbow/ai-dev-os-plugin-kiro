@@ -16,16 +16,15 @@
 - **2 File Match Rules** — 代码文件自动检查、L1-L2 依赖警告
 - **一条命令安装** — `npx ai-dev-os init --rules typescript --plugin kiro`
 
+![AI Dev OS Check & Fix Report](../../../docs/images/ai-dev-os-check.png)
+
 ## 快速开始
 
 ```bash
 npx ai-dev-os init --rules typescript --plugin kiro
-# 将转向规则和钩子复制到 Kiro 目录：
-cp -r .ai-dev-os/plugin/steering/ .kiro/steering/
-cp -r .ai-dev-os/plugin/hooks/ .kiro/hooks/
 ```
 
-> CLI 会添加子模块并复制 AGENTS.md 模板。转向规则和钩子需要另外复制到 Kiro 目录。
+> CLI 会添加子模块、复制 AGENTS.md 模板，并将转向规则和钩子自动复制到 `.kiro/`。
 > 详情请参阅 [AI Dev OS CLI](https://github.com/yunbow/ai-dev-os-cli)。
 
 前提条件：[Kiro](https://kiro.dev/) >= 1.0.0 以及项目中已设置 AI Dev OS 层文件（L1-L3）（[TypeScript](https://github.com/yunbow/ai-dev-os-rules-typescript) / [Python](https://github.com/yunbow/ai-dev-os-rules-python)）。

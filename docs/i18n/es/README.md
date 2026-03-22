@@ -16,16 +16,15 @@ Integra las directrices de AI Dev OS en el **sistema de steering de Kiro**:
 - **2 File Match Rules** — Verificación automática en archivos de código, advertencias de dependencia L1-L2
 - **Configuración con un comando** — `npx ai-dev-os init --rules typescript --plugin kiro`
 
+![AI Dev OS Check & Fix Report](../../../docs/images/ai-dev-os-check.png)
+
 ## Inicio rápido
 
 ```bash
 npx ai-dev-os init --rules typescript --plugin kiro
-# Copia las reglas de steering y hooks a los directorios de Kiro:
-cp -r .ai-dev-os/plugin/steering/ .kiro/steering/
-cp -r .ai-dev-os/plugin/hooks/ .kiro/hooks/
 ```
 
-> El CLI agrega submódulos y copia la plantilla AGENTS.md. Las reglas de steering y hooks deben copiarse a los directorios de Kiro por separado.
+> El CLI agrega submódulos, copia la plantilla AGENTS.md y copia las reglas de steering y hooks a `.kiro/` automáticamente.
 > Consulta [AI Dev OS CLI](https://github.com/yunbow/ai-dev-os-cli) para más detalles.
 
 Requisitos: [Kiro](https://kiro.dev/) >= 1.0.0 y archivos de capas AI Dev OS (L1-L3) en tu proyecto ([TypeScript](https://github.com/yunbow/ai-dev-os-rules-typescript) / [Python](https://github.com/yunbow/ai-dev-os-rules-python)).

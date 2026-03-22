@@ -16,16 +16,15 @@ AI Dev OS 가이드라인을 **Kiro의 스티어링 시스템**에 통합:
 - **2 File Match Rules** — 코드 파일 자동 검사, L1-L2 의존성 경고
 - **원커맨드 설정** — `npx ai-dev-os init --rules typescript --plugin kiro`
 
+![AI Dev OS Check & Fix Report](../../../docs/images/ai-dev-os-check.png)
+
 ## 빠른 시작
 
 ```bash
 npx ai-dev-os init --rules typescript --plugin kiro
-# 스티어링 규칙과 훅을 Kiro 디렉토리로 복사:
-cp -r .ai-dev-os/plugin/steering/ .kiro/steering/
-cp -r .ai-dev-os/plugin/hooks/ .kiro/hooks/
 ```
 
-> CLI는 서브모듈을 추가하고 AGENTS.md 템플릿을 복사합니다. 스티어링 규칙과 훅은 별도로 Kiro 디렉토리에 복사해야 합니다.
+> CLI는 서브모듈 추가, AGENTS.md 템플릿 복사, 스티어링 규칙과 훅의 `.kiro/` 복사를 자동으로 수행합니다.
 > 자세한 내용은 [AI Dev OS CLI](https://github.com/yunbow/ai-dev-os-cli)를 참조하세요.
 
 전제 조건: [Kiro](https://kiro.dev/) >= 1.0.0 및 프로젝트에 AI Dev OS 레이어 파일(L1-L3) ([TypeScript](https://github.com/yunbow/ai-dev-os-rules-typescript) / [Python](https://github.com/yunbow/ai-dev-os-rules-python)).
